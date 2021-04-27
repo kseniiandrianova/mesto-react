@@ -26,7 +26,7 @@ export default function Main(props) {
             .catch((err) => {
                 console.log(err)
             })
-    })
+    }, [])
 
     return (
         <main className="content">

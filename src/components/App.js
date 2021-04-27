@@ -33,10 +33,15 @@ function App() {
       }
 
   return (
-    <body class="page">
+    <div class="page">
     <div className="page__container">
             <Header />
-            <Main onEditAvatar={handleEditAvatarClick} onEditProfile={handleEditProfileClick}  onAddPlace={handleAddPlaceClick} onCardClick={handleCardClick}/>
+            <Main 
+            onEditAvatar={handleEditAvatarClick} 
+            onEditProfile={handleEditProfileClick}  
+            onAddPlace={handleAddPlaceClick} 
+            onCardClick={handleCardClick}
+            />
             <PopupWithForm name="edit-avatar" title="Обновить аватар" submitText="Сохранить" isOpen={isEditAvatarPopupOpen && 'popup_opened'} onClose={closeAllPopups}>
     
 
@@ -73,8 +78,6 @@ function App() {
     <PopupWithForm name="remove-card" title="Вы уверены?">
     <section className="popup popup_question">
             <div className="popup__container popup__form_question popup__form" name="form-container">
-                <button className="popup__button-close popup__close-question" type="reset"></button>
-                <button className="popup__button-save popup__button" type="submit">Да</button>
             </div>
         </section>
     </PopupWithForm> 
@@ -82,7 +85,7 @@ function App() {
             <Footer />
             
     </div>
-    </body>
+    </div>
     
   );
 }
