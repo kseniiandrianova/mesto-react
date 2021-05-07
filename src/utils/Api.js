@@ -19,7 +19,7 @@ export default class Api {
         .then(this._handleResponse)
   }
 
-  addCard(name, link) {
+  addCard({name, link}) {
     return fetch(`${this._url}cards`, {
       method: 'POST',
       headers: this._headers,
@@ -39,6 +39,7 @@ export default class Api {
     })
     .then(this._handleResponse)
   }
+
 
   addLike(cardId) {
     return fetch(`${this._url}cards/likes/${cardId}`, {
