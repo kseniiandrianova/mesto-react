@@ -60,11 +60,17 @@ function App() {
         if (!isLiked) {
           api.addLike(card._id).then((newCard) => {
             setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
-          });
+          })
+          .catch((err) => {
+            console.log(err)
+        });
         } else {
           api.deleteLike(card._id).then((newCard) => {
             setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
-          });
+          })
+          .catch((err) => {
+            console.log(err)
+        });
         }
         
         }
@@ -75,6 +81,9 @@ function App() {
         setCards((cards) => cards
         .filter(item => item._id !== card._id))
         })
+        .catch((err) => {
+          console.log(err)
+      })
       }
       
       function handleUpdateUser(e) {

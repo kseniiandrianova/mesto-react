@@ -9,7 +9,7 @@ export default function AddPlacePopap (props) {
         props.onAddPlace({
             name: nameRef.current.value,
             link: linkRef.current.value
-        })
+        }, [props.isOpen])
     }
 
 
